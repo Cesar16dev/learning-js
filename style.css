@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Cascadia Code";
+  src: url(CascadiaCode-2111.01/otf/static/CascadiaCode-Bold.otf);
+}
+
+:root {
+  --black: #22272d;
+  --yellow: #f7df1d;
+  --lightOrange: #e9ad3b;
+  --green: #009688;
+  --lightGreen: #47b3a8;
+  --red: #dc3545;
+  --lightRed: #c82333;
+  --white: #fff;
+  --mg-top: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +22,7 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: var(--black);
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -14,13 +31,13 @@ body {
 }
 
 h1 {
-  color: #333;
+  color: var(--yellow);
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 p {
-  color: #555;
+  color: var(--lightOrange);
   text-align: center;
   margin: 20px;
   font-size: 1.2em;
@@ -33,14 +50,14 @@ label {
 input[type="number"] {
   padding: 8px;
   font-size: 16px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   width: 100px;
+  border: none;
 }
 
 button {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--green);
+  color: var(--white);
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -49,33 +66,49 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--lightGreen);
+}
+
+.dude {
+  margin-top: var(--mg-top);
+  font-size: 8em;
+  animation: dude 2s ease-in-out 500ms infinite alternate forwards;
+}
+
+@keyframes dude {
+  to {
+    transform: translateX(10px);
+  }
+  from {
+    transform: translateX(-10px);
+  }
 }
 
 #reset {
-  background-color: #dc3545;
-  color: white;
+  background-color: var(--red);
+  color: var(--white);
 }
 
 #reset:hover {
-  background-color: #c82333;
+  background-color: var(--lightRed);
 }
 
 #attempMessage,
 #message {
   display: block;
   text-align: center;
-  margin-top: 10px;
+  margin-top: var(--mg-top);
   font-weight: bold;
-  color: #333;
+  color: var(--white);
 }
 
 #wrappedAttemps {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: var(--mg-top);
   font-weight: 500;
   font-size: 2em;
+  color: var(--yellow);
 }
 
 #numberZone {
@@ -84,4 +117,5 @@ button:hover {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  color: var(--white);
 }
